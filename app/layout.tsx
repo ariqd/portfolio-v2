@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Work_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from "../components/Navbar";
 
 const workSans = Work_Sans({
   variable: "--font-work-sans",
@@ -24,7 +23,6 @@ export default function RootLayout({
         className={`${workSans.variable} antialiased`}
       >
         <div className="min-h-screen bg-gray-200 p-10">
-          <Navbar />
           {children}
           <span className="flex justify-center text-gray-500 mt-10">
             &copy; {new Date().getFullYear()} Ariq Daffa.

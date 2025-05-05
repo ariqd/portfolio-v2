@@ -1,32 +1,50 @@
-import Image from "next/image";
-import ProfilePicture from '../public/profile-picture.png';
+'use client';
+
+import { useEffect, useMemo, useRef, useState } from "react";
+
+import HomePage from "./home/page";
+import Experience from "./experience/page";
+import Education from "./education/page";
+
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
+    const sections = useMemo(() => [
+        { id: 'home', name: 'Home' },
+        { id: 'experience', name: 'Experience' },
+        { id: 'education', name: 'Education' },
+        { id: 'articles', name: 'Articles', isComingSoon: true },
+        { id: 'contact', name: 'Contact' },
+    ], []);
+
+    const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
+    const [activeSection, setActiveSection] = useState('home');
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveSection(entry.target.id);
+                    }
+                });
+            },
+            { threshold: 0.6 }
+        );
+
+        Object.values(sectionRefs.current).forEach((ref) => {
+            if (ref) observer.observe(ref);
+        });
+
+        return () => observer.disconnect();
+    }, []);
+
     return (
         <>
-            <div className='card flex justify-between items-center px-12 py-20'>
-                <div className='flex-2'>
-                    <h1 className="text-5xl font-bold">
-                        Hi, I’m Ariq
-                    </h1>
-                    <div className="mt-10">
-                        <p className="mt-6 text-gray-700 text-lg">
-                            I’m a Frontend and Mobile Engineer with over 5 years of experience building fast, reliable, and user-focused digital products—mostly in banking, edutech and e-commerce.
-                        </p>
-                        <p className="mt-6 text-gray-700 text-lg">
-                            I’m passionate about crafting smooth, scalable experiences using React Native and React.js, and I love collaborating with teams to turn complex problems into elegant, intuitive interfaces.
-                        </p>
-                        <p className="mt-6 text-gray-700 text-lg">
-                            From translating design systems into pixel-perfect UIs to fine-tuning performance, I’m all about creating products that feel as good as they look.
-                        </p>
-                    </div>
-                </div>
-                <div className='flex-1'>
-                    <div className="flex justify-center items-center">
-                        <Image src={ProfilePicture} alt="ariq profile picture" width={300} height={300} className='rounded-full border-4 border-black' />
-                    </div>
-                </div>
-            </div>
+            <Navbar sections={sections} activeSection={activeSection} />
+            <HomePage id="home" ref={(el) => { sectionRefs.current['home'] = el; }} />
+            <Experience id="experience" ref={(el) => { sectionRefs.current['experience'] = el; }} />
+            <Education id="education" ref={(el) => { sectionRefs.current['education'] = el; }} />
         </>
     );
 }

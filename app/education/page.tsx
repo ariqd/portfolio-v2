@@ -6,18 +6,18 @@ type SectionProps = {
   id: string;
 };
 
-const Experience = forwardRef<HTMLElement, SectionProps>(({ id }, ref) => {
+const Education = forwardRef<HTMLElement, SectionProps>(({ id }, ref) => {
   return (
     <section
       id={id}
       ref={ref}
       className="h-screen border-b p-10"
     >
-      <h2 className="text-3xl font-bold">Experience</h2>
+      <h2 className="text-3xl font-bold">Education</h2>
     </section>
   );
 });
 
-Experience.displayName = 'Experience';
+Education.displayName = 'Education';
 
-export default Experience;
+export default Education;
