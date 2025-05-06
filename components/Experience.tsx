@@ -2,12 +2,12 @@
 
 import { forwardRef } from 'react';
 import Image from 'next/image';
-import simobiplus from '../../public/simobiplus.png';
-import lw from '../../public/lw.png';
-import sinarmas from '../../public/sinarmas.png';
-import urhub from '../../public/urhub.png';
-import bandungchoral from '../../public/bandungchoral.png';
-import vsp from '../../public/vsp.png';
+import simobiplus from '../public/simobiplus.png';
+import lw from '../public/lw.png';
+import sinarmas from '../public/sinarmas.png';
+import urhub from '../public/urhub.png';
+import bandungchoral from '../public/bandungchoral.png';
+import vsp from '../public/vsp.png';
 
 type SectionProps = {
   id: string;

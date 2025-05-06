@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ProfilePicture from '../../public/profile-picture.png';
+import ProfilePicture from '../public/profile-picture.png';
 import { forwardRef } from "react";
 
 type SectionProps = {

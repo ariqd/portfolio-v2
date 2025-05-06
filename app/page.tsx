@@ -2,11 +2,10 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 
-import HomePage from "./home/page";
-import Experience from "./experience/page";
-import Education from "./education/page";
-
 import Navbar from "@/components/Navbar";
+import HomePage from "@/components/Home";
+import Experience from "@/components/Experience";
+import Education from "@/components/Education";
 import Contact from "@/components/Contact";
 
 export default function Home() {
