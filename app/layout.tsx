@@ -34,7 +34,7 @@ export default function RootLayout({
       <body
         className={`${workSans.variable} ${poppins.variable} ${poppinsBold.variable} antialiased`}
       >
-        <div className="min-h-screen bg-gray-200 p-10">
+        <div className="min-h-screen p-10">
           {children}
           <span className="flex justify-center text-gray-500 mt-10">
             &copy; {new Date().getFullYear()} Ariq Daffa.

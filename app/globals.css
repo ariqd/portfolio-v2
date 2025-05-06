@@ -5,7 +5,7 @@ html {
 }
 
 :root {
-  --background: #e5e7eb;
+  --background: #ffffff;
   --foreground: #171717;
 }
 
@@ -19,7 +19,7 @@ html {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #e5e7eb;
+    --background: #ffffff;
     --foreground: #171717;
   }
 }
@@ -31,5 +31,9 @@ body {
 }
 
 .card {
-  @apply bg-white rounded-2xl shadow-lg mb-8;
+  @apply bg-white mb-8;
+}
+
+.heading {
+  @apply text-3xl font-bold text-center font-(family-name:--font-poppins-bold) p-1 tracking-wide border-b-4 border-blue-300
 }

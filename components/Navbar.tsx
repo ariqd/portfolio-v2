@@ -13,7 +13,7 @@ interface Section {
 const Navbar = ({ sections, activeSection }: { sections: Section[], activeSection: string }) => {
   return (
     <nav className="flex min-w-full justify-between items-center card p-6">
-      <span className={`font-(family-name:--font-poppins-bold) font-bold text-2xl text-black`}>ariq daffa</span>
+      <span className={`font-(family-name:--font-poppins-bold) font-bold text-2xl text-blue-400`}>ariq daffa</span>
       <div className="lg:flex hidden gap-6">
         {sections.map((section) => (
           <NavLink
@@ -36,7 +36,7 @@ function NavLink({ href, children, isActive, isComingSoon }: { href: string; chi
     : (
       <Link
         href={href}
-        className={`${isActive ? 'text-black' : 'text-gray-500'} hover:text-black font-(family-name:--font-poppins) `}
+        className={`${isActive ? 'text-blue-300' : 'text-gray-500'} hover:text-blue-300 font-(family-name:--font-poppins) `}
       >
         {children}
       </Link>
