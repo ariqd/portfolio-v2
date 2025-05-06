@@ -13,6 +13,8 @@ html {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-work-sans);
+  --font-poppins: var(--font-poppins);
+  --font-poppins-bold: var(--font-poppins-bold);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,5 +31,5 @@ body {
 }
 
 .card {
-  @apply bg-white rounded-2xl shadow-lg mb-6;
+  @apply bg-white rounded-2xl shadow-lg mb-8;
 }

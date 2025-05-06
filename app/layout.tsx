@@ -1,11 +1,23 @@
 import type { Metadata } from "next";
-import { Work_Sans } from "next/font/google";
+import { Poppins, Work_Sans } from "next/font/google";
 import "./globals.css";
 
 const workSans = Work_Sans({
   variable: "--font-work-sans",
   subsets: ["latin"],
 });
+
+const poppins = Poppins({
+  weight: '500',
+  subsets: ['latin'],
+  variable: '--font-poppins',
+})
+
+const poppinsBold = Poppins({
+  weight: '800',
+  subsets: ['latin'],
+  variable: '--font-poppins-bold',
+})
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -20,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${workSans.variable} antialiased`}
+        className={`${workSans.variable} ${poppins.variable} ${poppinsBold.variable} antialiased`}
       >
         <div className="min-h-screen bg-gray-200 p-10">
           {children}

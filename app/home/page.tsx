@@ -13,8 +13,13 @@ const HomePage = forwardRef<HTMLElement, SectionProps>(({ id }, ref) => {
             ref={ref}
             className="scroll-mt-4"
         >
-            <div className='card flex justify-between items-center px-12 py-20'>
-                <div className='flex-2'>
+            <div className='card md:flex md:justify-between md:items-center px-12 py-20'>
+                <div className='flex-1 md:order-2'>
+                    <div className="flex justify-center items-center">
+                        <Image src={ProfilePicture} alt="ariq profile picture" width={250} height={250} className='rounded-full border-4 border-black' />
+                    </div>
+                </div>
+                <div className='flex-2 md:order-1 mt-10 md:mt-0'>
                     <h1 className="text-5xl font-bold">
                         Hi, I’m Ariq
                     </h1>
@@ -28,11 +33,6 @@ const HomePage = forwardRef<HTMLElement, SectionProps>(({ id }, ref) => {
                         <p className="mt-6 text-gray-700 text-lg">
                             From translating design systems into pixel-perfect UIs to fine-tuning performance, I’m all about creating products that feel as good as they look.
                         </p>
-                    </div>
-                </div>
-                <div className='flex-1'>
-                    <div className="flex justify-center items-center">
-                        <Image src={ProfilePicture} alt="ariq profile picture" width={300} height={300} className='rounded-full border-4 border-black' />
                     </div>
                 </div>
             </div>

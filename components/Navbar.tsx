@@ -1,20 +1,8 @@
 'use client'
 
-import { Poppins } from 'next/font/google'
 import Link from 'next/link'
-// import Link from 'next/link'
-// import { usePathname } from 'next/navigation'
 import { memo } from 'react'
 
-const poppins = Poppins({
-  weight: '500',
-  subsets: ['latin'],
-})
-
-const poppinsBold = Poppins({
-  weight: '800',
-  subsets: ['latin'],
-})
 
 interface Section {
   id: string;
@@ -25,8 +13,8 @@ interface Section {
 const Navbar = ({ sections, activeSection }: { sections: Section[], activeSection: string }) => {
   return (
     <nav className="flex min-w-full justify-between items-center card p-6">
-      <span className={`${poppinsBold.className} text-2xl text-black`}>ariq daffa</span>
-      <div className="flex gap-6">
+      <span className={`font-(family-name:--font-poppins-bold) font-bold text-2xl text-black`}>ariq daffa</span>
+      <div className="lg:flex hidden gap-6">
         {sections.map((section) => (
           <NavLink
             key={section.name}
@@ -37,11 +25,6 @@ const Navbar = ({ sections, activeSection }: { sections: Section[], activeSectio
             {section.name}
           </NavLink>
         ))}
-        {/* <NavLink currentPath={pathname} href="/">[0]</NavLink> */}
-        {/* <NavLink currentPath={pathname} href="/experience">Experience</NavLink> */}
-        {/* <NavLink currentPath={pathname} href="/education">Education</NavLink> */}
-        {/* <span className="text-gray-400 cursor-not-allowed">Articles (coming soon!)</span> */}
-        {/* <NavLink currentPath={pathname} href="/contact">Contact</NavLink> */}
       </div>
     </nav>
   )
@@ -53,7 +36,7 @@ function NavLink({ href, children, isActive, isComingSoon }: { href: string; chi
     : (
       <Link
         href={href}
-        className={`${poppins.className} ${isActive ? 'text-black' : 'text-gray-500'} hover:text-black`}
+        className={`${isActive ? 'text-black' : 'text-gray-500'} hover:text-black font-(family-name:--font-poppins) `}
       >
         {children}
       </Link>
