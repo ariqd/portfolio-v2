@@ -2,9 +2,9 @@
 
 import Image from 'next/image';
 import { forwardRef } from 'react';
-import gmail from '../../public/gmail.png';
-import linkedin from '../../public/linkedin.png';
-import github from '../../public/github.png';
+import gmail from '../public/gmail.png';
+import linkedin from '../public/linkedin.png';
+import github from '../public/github.png';
 
 type SectionProps = {
   id: string;

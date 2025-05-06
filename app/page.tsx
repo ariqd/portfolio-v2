@@ -7,7 +7,7 @@ import Experience from "./experience/page";
 import Education from "./education/page";
 
 import Navbar from "@/components/Navbar";
-import Contact from "./contact/page";
+import Contact from "@/components/Contact";
 
 export default function Home() {
     const sections = useMemo(() => [
