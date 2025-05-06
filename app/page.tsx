@@ -7,6 +7,7 @@ import Experience from "./experience/page";
 import Education from "./education/page";
 
 import Navbar from "@/components/Navbar";
+import Contact from "./contact/page";
 
 export default function Home() {
     const sections = useMemo(() => [
@@ -45,6 +46,7 @@ export default function Home() {
             <HomePage id="home" ref={(el) => { sectionRefs.current['home'] = el; }} />
             <Experience id="experience" ref={(el) => { sectionRefs.current['experience'] = el; }} />
             <Education id="education" ref={(el) => { sectionRefs.current['education'] = el; }} />
+            <Contact id="contact" ref={(el) => { sectionRefs.current['contact'] = el; }} />
         </>
     );
 }

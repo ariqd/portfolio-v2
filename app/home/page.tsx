@@ -16,7 +16,7 @@ const HomePage = forwardRef<HTMLElement, SectionProps>(({ id }, ref) => {
             <div className='card md:flex md:justify-between md:items-center px-12 py-20'>
                 <div className='flex-1 md:order-2'>
                     <div className="flex justify-center items-center">
-                        <Image src={ProfilePicture} alt="ariq profile picture" width={250} height={250} className='rounded-full border-4 border-black' />
+                        <Image src={ProfilePicture} alt="ariq profile picture" width={250} height={250} className='rounded-full border-6 border-gray-400' />
                     </div>
                 </div>
                 <div className='flex-2 md:order-1 mt-10 md:mt-0'>
