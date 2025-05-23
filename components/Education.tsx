@@ -11,7 +11,7 @@ const Education = forwardRef<HTMLElement, SectionProps>(({ id }, ref) => {
         <section
             id={id}
             ref={ref}
-            className="card p-10 mt-10 scroll-mt-6"
+            className="card"
         >
             <div className='flex justify-center'>
                 <span className="heading">Education</span>

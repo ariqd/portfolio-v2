@@ -31,9 +31,13 @@ body {
 }
 
 .card {
-  @apply bg-white mb-8;
+  @apply container flex flex-col items-center justify-center min-h-screen px-4 py-16 mx-auto lg:px-16;
 }
 
 .heading {
   @apply text-3xl font-bold text-center font-(family-name:--font-poppins-bold) p-1 tracking-wide border-b-4 border-blue-300
+}
+
+.experience-container {
+  @apply flex flex-col lg:flex-row items-center gap-10 mt-30
 }

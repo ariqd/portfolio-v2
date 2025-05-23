@@ -10,7 +10,7 @@ import Contact from "@/components/Contact";
 
 export default function Home() {
     const sections = useMemo(() => [
-        { id: 'home', name: 'Home' },
+        // { id: 'home', name: 'Home' },
         { id: 'experience', name: 'Experience' },
         { id: 'education', name: 'Education' },
         { id: 'articles', name: 'Articles', isComingSoon: true },
@@ -41,11 +41,15 @@ export default function Home() {
 
     return (
         <>
-            <Navbar sections={sections} activeSection={activeSection} />
-            <HomePage id="home" ref={(el) => { sectionRefs.current['home'] = el; }} />
-            <Experience id="experience" ref={(el) => { sectionRefs.current['experience'] = el; }} />
-            <Education id="education" ref={(el) => { sectionRefs.current['education'] = el; }} />
-            <Contact id="contact" ref={(el) => { sectionRefs.current['contact'] = el; }} />
+            <div className="flex flex-col md:h-screen">
+                <Navbar sections={sections} activeSection={activeSection} />
+                <HomePage id="home" ref={(el) => { sectionRefs.current['home'] = el; }} />
+            </div>
+            <div className="bg-white">
+                <Experience id="experience" ref={(el) => { sectionRefs.current['experience'] = el; }} />
+                <Education id="education" ref={(el) => { sectionRefs.current['education'] = el; }} />
+                <Contact id="contact" ref={(el) => { sectionRefs.current['contact'] = el; }} />
+            </div>
         </>
     );
 }

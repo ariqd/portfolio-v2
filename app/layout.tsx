@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Work_Sans } from "next/font/google";
 import "./globals.css";
+import ScrollToTopButton from "@/components/ScrollToTop";
 
 const workSans = Work_Sans({
   variable: "--font-work-sans",
@@ -34,10 +35,11 @@ export default function RootLayout({
       <body
         className={`${workSans.variable} ${poppins.variable} ${poppinsBold.variable} antialiased`}
       >
-        <div className="min-h-screen p-10">
+        <div className="bg-[url('/gradient-bg.jpg')] bg-fixed bg-cover">
           {children}
-          <span className="flex justify-center text-gray-500 mt-10">
-            &copy; {new Date().getFullYear()} Ariq Daffa.
+          <ScrollToTopButton />
+          <span className="flex justify-center text-gray-500 py-10 bg-white">
+            &copy; {new Date().getFullYear()} Ariq Daffa Athallah Putra
           </span>
         </div>
       </body>
