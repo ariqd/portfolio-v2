@@ -23,8 +23,8 @@ const Navbar = ({ sections, activeSection }: { sections: Section[], activeSectio
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="flex min-w-full justify-between items-center card p-6">
-      <span className={`font-(family-name:--font-poppins-bold) font-bold text-2xl text-blue-400`}>ariq daffa</span>
+    <nav className="flex min-w-full justify-between items-center p-8">
+      <span className={`font-(family-name:--font-poppins-bold) font-bold text-3xl text-blue-400`}>ariq daffa</span>
       <div className="lg:flex hidden gap-6">
         {sections.map((section) => (
           <NavLink
@@ -45,7 +45,7 @@ const Navbar = ({ sections, activeSection }: { sections: Section[], activeSectio
         aria-label="Menu"
         aria-expanded="false"
         aria-controls="mobile-menu"
-        className={`lg:hidden z-10 fixed top-10 right-10 bg-white border border-blue-200 p-6 flex flex-col items-center justify-center rounded-2xl shadow-lg cursor-pointer`}
+        className={`lg:hidden z-10 fixed top-2 right-4 bg-white border border-blue-200 p-6 flex flex-col items-center justify-center rounded-2xl shadow-lg cursor-pointer`}
       >
         {mobileMenuOpen ? <RiCloseFill size={20} /> : <RiMenu3Fill size={20} />}
       </button>

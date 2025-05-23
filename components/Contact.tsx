@@ -15,13 +15,13 @@ const Contact = forwardRef<HTMLElement, SectionProps>(({ id }, ref) => {
         <section
             id={id}
             ref={ref}
-            className="card p-10 mt-10 scroll-mt-6"
+            className="card gap-12 md:gap-0"
         >
             <div className='flex justify-center'>
                 <span className="heading">Say hi!</span>
             </div>
 
-            <section className='py-30 md:flex justify-center items-center gap-20'>
+            <section className='flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20 grow text-center'>
                 <div className=''>
                     <p className='text-3xl font-bold md:text-right'>
                         Wanna get in touch?
@@ -30,21 +30,21 @@ const Contact = forwardRef<HTMLElement, SectionProps>(({ id }, ref) => {
                         I am always available for exciting discussions.
                     </p>
                 </div>
-                <div>
-                    <p className='text-lg mt-10 flex items-center gap-6'>
+                <div className='flex flex-col gap-10'>
+                    <div className='text-lg flex flex-col gap-4 items-center md:items-start'>
                         <Image src={gmail} alt="gmail" width={50} />
-                        <span>ariqdaffaathallah@gmail.com</span>
-                    </p>
+                        <a href='mailto:ariqdaffaathallah@gmail.com' target="_blank" rel="noopener noreferrer" className='underline'>ariqdaffaathallah@gmail.com</a>
+                    </div>
 
-                    <p className='text-lg mt-10 flex items-center gap-6'>
+                    <div className='text-lg flex flex-col gap-4 items-center md:items-start'>
                         <Image src={linkedin} alt="linkedin" width={50} />
                         <a href="https://www.linkedin.com/in/ariqd" target="_blank" rel="noopener noreferrer" className='underline'>linkedin.com/in/ariqd</a>
-                    </p>
+                    </div>
 
-                    <p className='text-lg mt-10 flex items-center gap-6'>
-                        <Image src={github} alt="Github" width={50} />
+                    <div className='text-lg flex flex-col gap-4 items-center md:items-start'>
+                        <Image src={github} alt="Github" width={50} className='border border-black rounded-full' />
                         <a href="https://www.github.com/ariqd" target="_blank" rel="noopener noreferrer" className='underline'>github.com/ariqd</a>
-                    </p>
+                    </div>
                 </div>
 
             </section>
