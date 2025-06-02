@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins, Work_Sans } from "next/font/google";
 import "./globals.css";
 import ScrollToTopButton from "@/components/ScrollToTop";
+import { PostHogProvider } from '../providers/posthog'
 
 const workSans = Work_Sans({
   variable: "--font-work-sans",
@@ -35,13 +36,15 @@ export default function RootLayout({
       <body
         className={`${workSans.variable} ${poppins.variable} ${poppinsBold.variable} antialiased`}
       >
-        <div className="bg-[url('/gradient-bg.jpg')] bg-fixed bg-cover">
-          {children}
-          <ScrollToTopButton />
-          <span className="flex justify-center text-gray-500 py-10 bg-white">
-            &copy; {new Date().getFullYear()} Ariq Daffa Athallah Putra
-          </span>
-        </div>
+        <PostHogProvider>
+          <div className="bg-[url('/gradient-bg.jpg')] bg-fixed bg-cover">
+            {children}
+            <ScrollToTopButton />
+            <span className="flex justify-center text-gray-500 py-10 bg-white">
+              &copy; {new Date().getFullYear()} Ariq Daffa Athallah Putra
+            </span>
+          </div>
+        </PostHogProvider>
       </body>
     </html>
   );
