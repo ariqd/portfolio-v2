@@ -3,6 +3,7 @@ import { Poppins, Work_Sans } from "next/font/google";
 import "./globals.css";
 import ScrollToTopButton from "@/components/ScrollToTop";
 import { PostHogProvider } from '../providers/posthog'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const workSans = Work_Sans({
   variable: "--font-work-sans",
@@ -45,6 +46,7 @@ export default function RootLayout({
             </span>
           </div>
         </PostHogProvider>
+        {process.env.GOOGLE_ANALYTICS_KEY && <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS_KEY} />}
       </body>
     </html>
   );
