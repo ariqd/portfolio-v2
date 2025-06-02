@@ -46,7 +46,7 @@ export default function RootLayout({
             </span>
           </div>
         </PostHogProvider>
-        {process.env.GOOGLE_ANALYTICS_KEY && <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS_KEY} />}
+        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_KEY && <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_KEY} />}
       </body>
     </html>
   );
